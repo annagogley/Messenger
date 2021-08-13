@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1AD89F0C01DEFC05246926B7 /* Pods_Messenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4A1B1F58573CF548AB9932 /* Pods_Messenger.framework */; };
+		372E3E8B26C66B6900F328E8 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E3E8A26C66B6900F328E8 /* DataBaseManager.swift */; };
 		3798AB0326C593570054C6E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3798AB0226C593560054C6E4 /* GoogleService-Info.plist */; };
 		37A71C0C26C57360000B42D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A71C0B26C57360000B42D9 /* AppDelegate.swift */; };
 		37A71C0E26C57360000B42D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A71C0D26C57360000B42D9 /* SceneDelegate.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		372E3E8A26C66B6900F328E8 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 		3798AB0226C593560054C6E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		37A71C0826C57360000B42D9 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37A71C0B26C57360000B42D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				37A71C0B26C57360000B42D9 /* AppDelegate.swift */,
+				372E3E8A26C66B6900F328E8 /* DataBaseManager.swift */,
 				37A71C4026C57CEF000B42D9 /* Extensions.swift */,
 				37A71C0D26C57360000B42D9 /* SceneDelegate.swift */,
 			);
@@ -296,6 +299,7 @@
 				37A71C3C26C575F8000B42D9 /* ProfileViewController.swift in Sources */,
 				37A71C0E26C57360000B42D9 /* SceneDelegate.swift in Sources */,
 				37A71C3326C575B9000B42D9 /* PhotoViewerViewController.swift in Sources */,
+				372E3E8B26C66B6900F328E8 /* DataBaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

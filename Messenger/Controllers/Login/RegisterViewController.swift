@@ -197,20 +197,36 @@ class RegisterViewController: UIViewController {
         
         //Firebase login
         
-        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
-            guard error == nil else {
-                print("error creating user")
+        DatabaseManager.shared.userExists(with: email) { [weak self] (exists) in
+            guard let strongSelf = self else {
                 return
             }
-            
-            let user = result?.user
-            print("created user: \(user)")
+            guard !exists else {
+                //user already exists
+                strongSelf.alertUserLoginError(message: "User with this email already exists")
+                return
+            }
+            FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+                
+                guard error == nil else {
+                    print("error creating user")
+                    return
+                }
+                
+                DatabaseManager.shared.insertUser(with: ChatAppUser(firstName: firstName,
+                                                                    lastName: lastName,
+                                                                    emailAdress: email))
+                
+                strongSelf.navigationController?.dismiss(animated: true, completion: nil)
+            }
         }
+        
+        
     }
     
-    func alertUserLoginError() {
+    func alertUserLoginError(message: String = "Please enter all information to create a new account.") {
         let alert = UIAlertController(title: "Woops!",
-                                      message: "Please enter all information to create a new account.",
+                                      message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Dismiss",
                                       style: .cancel, handler: nil))
